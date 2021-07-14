@@ -30,16 +30,18 @@
                <p>Bruh..</p>
                <p>I love you vesper <3</p>
   </main>
- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script>
- $(document).ready(function() {
- var $element = $(element);
- var width = '80';
- var height = '80';
- var src = 'https://whatthedogdoin.devswhofuckdevs.xyz/54d0Vtmii' + width + '/' + height  ;
- $element.css('background-image', 'url(' + src + ')');
-}
- });
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var setupRandomImage = function(element) {
+                    var $element = $(element);
+                    var width = '80';
+                    var height = '80';
+                    var src = 'https://whatthedogdoin.devswhofuckdevs.xyz/54d0Vtmii' + width + '/' + height ;
+                    $element.css('background-image', 'url(' + src + ')');
+                }
+                setupRandomImage('.background');
+            });
 </script>
     </body>
 </html>
