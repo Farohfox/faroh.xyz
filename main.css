@@ -1,1 +1,116 @@
-*{margin:0 -webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}body,html{text-align:center;font-family:roboto,Calibri,Arial,sans-serif;overflow:hidden;height:100%;width:100%}h1{color:#808080;font-size:6vw}h2{color:#808080;font-size:3vw}p{color:#808080;font-size:3vw}.text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center}.background{position:fixed;top:0;right:0;bottom:0;left:0;z-index:-99;background-size:cover;background-repeat:no-repeat;background-position:center center;transition:opacity 1s linear,all 500ms ease;opacity:1}.background:before{content:'';position:absolute;top:0;right:0;bottom:0;left:0;background-image:linear-gradient(to bottom right,#396afc,#2948ff)}}
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+}
+
+h1 {
+    font-size: 4rem;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #f5564e;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.floating-circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    animation: float 10s infinite ease-in-out;
+}
+
+.circle:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.circle:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.circle:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    top: 40%;
+    left: 50%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-30px) translateX(15px);
+    }
+}
+
+.mascot {
+    width: 150px;
+    height: auto;
+    margin-top: 1rem;
+}
