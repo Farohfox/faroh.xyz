@@ -13,6 +13,172 @@
     <meta property="og:site_name" content="About Me" />
     
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background: linear-gradient(135deg, #ff9eb6, #ffd1dc);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            min-height: 100vh;
+            overflow: hidden;
+            padding-bottom: 50px;
+        }
+
+        .floating-circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .circle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            left: 20%;
+        }
+
+        .circle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: 40%;
+        }
+
+        .circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 70%;
+            left: 60%;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 0px #ff6f91;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #fff;
+            text-shadow: 1px 1px 0px #ff6f91;
+            margin-bottom: 20px;
+        }
+
+        .faroh {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            background: #ff6f91;
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hardware-section {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        .hardware-section img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+        }
+
+        .hardware-section h2 {
+            font-size: 2rem;
+            color: #fff;
+            text-shadow: 1px 1px 0px #ff6f91;
+            margin-bottom: 10px;
+        }
+
+        .gallery {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        .gallery h2 {
+            font-size: 2rem;
+            color: #fff;
+            text-shadow: 1px 1px 0px #ff6f91;
+            margin-bottom: 10px;
+        }
+
+        .gallery img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="floating-circles">
@@ -25,6 +191,29 @@
         <p>I kind of do a bit of everything. <br> With a passion for computer science, and yeah :3</p>
         <img src="faroh.png" alt="Faroh" class="faroh">
         <a href="links.html" class="button">Find me Here!</a>
+    </div>
+
+    <div class="hardware-section">
+        <h2>My PC Setup</h2>
+        <p>AMD Ryzen 7 7700x<br>AMD Radeon RX7900XT</p>
+        <img src="placeholderpc.png" alt="My PC Setup">
+    </div>
+
+    <div class="hardware-section">
+        <h2>My Homelab</h2>
+        <p>Dell PowerEdge R330<br>Intel® Xeon® Processor E3-1240 v6, 32GB RAM</p>
+        <p>Dell PowerEdge R630<br>Intel® Xeon® Processor E5-2697 v4, 64GB RAM</p>
+        <img src="stackholder.png" alt="My Homelab">
+    </div>
+
+    <div class="gallery">
+        <h2>My Cute Fursuit Gallery</h2>
+        <img src="furholder1.png" alt="Fursuit 1">
+        <img src="furholder2.png" alt="Fursuit 2">
+        <img src="furholder3.png" alt="Fursuit 3">
+        <img src="furholder4.png" alt="Fursuit 4">
+        <img src="furholder5.png" alt="Fursuit 5">
+        <img src="furholder6.png" alt="Fursuit 6">
     </div>
 </body>
 </html>
