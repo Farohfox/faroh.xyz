@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UwU Links</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #FFCCE5;
+      font-family: 'Poppins', sans-serif;
+      color: #FF5C8D;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .container {
+      margin-top: 50px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #FF5C8D;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #FF5C8D;
+      margin-bottom: 40px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-style: italic;
+    }
+
+    .link {
+      display: inline-block;
+      margin: 20px;
+      background: #FF89A7;
+      padding: 15px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 1.2em;
+      transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .link:hover {
+      transform: scale(1.1);
+      background-color: #FF6A8C;
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5em;
+      }
+      .link {
+        padding: 12px 25px;
+        font-size: 1.1em;
+      }
+      p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Faroh's links</h1>
+    <p>Find me here! (◕‿◕✿)</p>
+    <a href="https://discord.gg/jUYSzRuAuZ" class="link">Discord (⁄ ⁄•⁄ω⁄•⁄ ⁄)</a>
+    <a href="https://x.com/FarohFox" class="link">Twitter 💖✨</a>
+    <a href="https://bsky.app/profile/did:plc:vw7qrtedg7ju3ztxcmdz3hv2" class="link">Bluesky 🌈</a>
+  </div>
+</body>
+</html>
