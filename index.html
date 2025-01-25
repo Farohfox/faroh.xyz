@@ -11,7 +11,7 @@
     <meta property="og:url" content="faroh.xyz" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="About Me" />
-    
+
     <link rel="stylesheet" href="style.css">
     <style>
         body {
@@ -77,34 +77,34 @@
 
         .container {
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             background: rgba(255, 255, 255, 0.5);
             border-radius: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            margin-bottom: 20px;
+            max-width: 350px;
+            margin-bottom: 10px;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: #fff;
             text-shadow: 2px 2px 0px #ff6f91;
             margin-bottom: 10px;
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #fff;
             text-shadow: 1px 1px 0px #ff6f91;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .faroh {
-            width: 150px;
+            width: 120px;
             height: auto;
             border-radius: 50%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .button {
@@ -112,8 +112,8 @@
             text-decoration: none;
             background: #ff6f91;
             color: #fff;
-            font-size: 1.2rem;
-            padding: 10px 20px;
+            font-size: 1rem;
+            padding: 8px 16px;
             border-radius: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s, box-shadow 0.2s;
@@ -132,33 +132,65 @@
         .hardware-section {
             text-align: center;
             background: rgba(255, 255, 255, 0.5);
-            padding: 20px;
+            padding: 15px;
             border-radius: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
-            margin-top: 20px;
+            max-width: 350px;
+            margin: 10px 0;
         }
 
         .hardware-section img {
             width: 100%;
-            max-width: 300px;
+            max-width: 200px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             margin-top: 10px;
         }
 
         .hardware-section h2 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #fff;
             text-shadow: 1px 1px 0px #ff6f91;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .hardware-section p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #fff;
             text-shadow: 1px 1px 0px #ff6f91;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 5px;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            max-width: 350px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
     </style>
 </head>
@@ -168,6 +200,7 @@
         <div class="circle"></div>
         <div class="circle"></div>
     </div>
+
     <div class="container">
         <h1>Hii, I'm Faroh. Or Aurora.</h1>
         <p>I kind of do a bit of everything. <br> With a passion for computer science, and yeah :3</p>
@@ -175,17 +208,28 @@
         <a href="links.html" class="button">Find me Here!</a>
     </div>
 
-    <div class="hardware-section">
-        <h2>My PC Setup</h2>
-        <p>AMD Ryzen 7 7700x<br>AMD Radeon RX7900XT</p>
-        <img src="placeholderpc.png" alt="My PC Setup">
+    <div class="section-wrapper">
+        <div class="hardware-section">
+            <h2>My PC Setup</h2>
+            <p>AMD Ryzen 7 7700x<br>AMD Radeon RX7900XT</p>
+            <img src="placeholderpc.png" alt="My PC Setup">
+        </div>
+
+        <div class="hardware-section">
+            <h2>My Homelab</h2>
+            <p>Dell PowerEdge R330<br>Intel® Xeon® Processor E3-1240 v6, 32GB RAM</p>
+            <p>Dell PowerEdge R630<br>Intel® Xeon® Processor E5-2697 v4, 64GB RAM</p>
+            <img src="stackholder.png" alt="My Homelab">
+        </div>
     </div>
 
-    <div class="hardware-section">
-        <h2>My Homelab</h2>
-        <p>Dell PowerEdge R330<br>Intel® Xeon® Processor E3-1240 v6, 32GB RAM</p>
-        <p>Dell PowerEdge R630<br>Intel® Xeon® Processor E5-2697 v4, 64GB RAM</p>
-        <img src="stackholder.png" alt="My Homelab">
+    <div class="gallery">
+        <img src="furholder1.png" alt="Fursuit Photo 1">
+        <img src="furholder2.png" alt="Fursuit Photo 2">
+        <img src="furholder3.png" alt="Fursuit Photo 3">
+        <img src="furholder4.png" alt="Fursuit Photo 4">
+        <img src="furholder5.png" alt="Fursuit Photo 5">
+        <img src="furholder6.png" alt="Fursuit Photo 6">
     </div>
 </body>
 </html>
