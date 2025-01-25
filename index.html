@@ -81,7 +81,7 @@
             background: rgba(255, 255, 255, 0.5);
             border-radius: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
+            max-width: 700px;
             margin-bottom: 10px;
         }
 
@@ -165,7 +165,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             gap: 5px;
-            margin-top: 10px;
             padding: 10px;
             background: rgba(255, 255, 255, 0.5);
             border-radius: 20px;
@@ -191,6 +190,23 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
+        }
+
+        .gallery-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .gallery-container h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 1px 1px 0px #ff6f91;
+            margin-bottom: 10px;
+        }
+
+        .kaomoji {
+            color: #fff;
+            text-shadow: 1px 1px 0px #ff6f91;
         }
     </style>
 </head>
@@ -223,13 +239,16 @@
         </div>
     </div>
 
-    <div class="gallery">
-        <img src="furholder1.png" alt="Fursuit Photo 1">
-        <img src="furholder2.png" alt="Fursuit Photo 2">
-        <img src="furholder3.png" alt="Fursuit Photo 3">
-        <img src="furholder4.png" alt="Fursuit Photo 4">
-        <img src="furholder5.png" alt="Fursuit Photo 5">
-        <img src="furholder6.png" alt="Fursuit Photo 6">
+    <div class="gallery-container">
+        <h2>Fursuit Pics (｡♥‿♥｡)</h2>
+        <div class="gallery">
+            <img src="furholder1.png" alt="Fursuit Photo 1">
+            <img src="furholder2.png" alt="Fursuit Photo 2">
+            <img src="furholder3.png" alt="Fursuit Photo 3">
+            <img src="furholder4.png" alt="Fursuit Photo 4">
+            <img src="furholder5.png" alt="Fursuit Photo 5">
+            <img src="furholder6.png" alt="Fursuit Photo 6">
+        </div>
     </div>
 </body>
 </html>
