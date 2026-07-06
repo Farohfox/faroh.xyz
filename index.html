@@ -1,254 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me ( ᵔ ⩊ ᵔ ) </title>
-
-    <meta property="og:title" content="About Me" />
-    <meta property="og:description" content="Hii, I'm Faroh. Or Aurora. I kind of do a bit of everything. With a passion for computer science, and yeah :3" />
-    <meta property="og:image" content="https://faroh.xyz/faroh.png" />
-    <meta property="og:url" content="faroh.xyz" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="About Me" />
-
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: 'Comic Sans MS', sans-serif;
-            background: linear-gradient(135deg, #ff9eb6, #ffd1dc);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: start;
-            min-height: 100vh;
-            padding-bottom: 50px;
-            overflow-y: auto;
-        }
-
-        .floating-circles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .circle {
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            animation: float 8s infinite ease-in-out;
-        }
-
-        .circle:nth-child(1) {
-            width: 120px;
-            height: 120px;
-            top: 10%;
-            left: 20%;
-        }
-
-        .circle:nth-child(2) {
-            width: 150px;
-            height: 150px;
-            top: 50%;
-            left: 40%;
-        }
-
-        .circle:nth-child(3) {
-            width: 100px;
-            height: 100px;
-            top: 70%;
-            left: 60%;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .container {
-            text-align: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            max-width: 700px;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: #fff;
-            text-shadow: 2px 2px 0px #ff6f91;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: #fff;
-            text-shadow: 1px 1px 0px #ff6f91;
-            margin-bottom: 10px;
-        }
-
-        .faroh {
-            width: 120px;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            margin-bottom: 15px;
-        }
-
-        .button {
-            display: inline-block;
-            text-decoration: none;
-            background: #ff6f91;
-            color: #fff;
-            font-size: 1rem;
-            padding: 8px 16px;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .button:active {
-            transform: scale(0.95);
-            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .hardware-section {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.5);
-            padding: 15px;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            max-width: 350px;
-            margin: 10px 0;
-        }
-
-        .hardware-section img {
-            width: 100%;
-            max-width: 200px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            margin-top: 10px;
-        }
-
-        .hardware-section h2 {
-            font-size: 1.5rem;
-            color: #fff;
-            text-shadow: 1px 1px 0px #ff6f91;
-            margin-bottom: 5px;
-        }
-
-        .hardware-section p {
-            font-size: 0.9rem;
-            color: #fff;
-            text-shadow: 1px 1px 0px #ff6f91;
-            margin-bottom: 5px;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 5px;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            max-width: 350px;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .section-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .gallery-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .gallery-container h2 {
-            font-size: 1.5rem;
-            color: #fff;
-            text-shadow: 1px 1px 0px #ff6f91;
-            margin-bottom: 10px;
-        }
-
-        .kaomoji {
-            color: #fff;
-            text-shadow: 1px 1px 0px #ff6f91;
-        }
-    </style>
+<title>Aurora's Page</title>
 </head>
-<body>
-    <div class="floating-circles">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
 
-    <div class="container">
-        <h1>Hii, I'm Faroh. Or Aurora.</h1>
-        <p>I kind of do a bit of everything. <br> With a passion for computer science, and yeah :3</p>
-        <img src="faroh.png" alt="Faroh" class="faroh">
-        <a href="links.html" class="button">Find me Here!</a>
-    </div>
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red">
 
-    <div class="section-wrapper">
-        <div class="hardware-section">
-            <h2>My PC Setup</h2>
-            <p>AMD Ryzen 7 7700x<br>AMD Radeon RX7900XT</p>
-            <img src="placeholderpc.png" alt="My PC Setup">
-        </div>
+<center>
 
-        <div class="hardware-section">
-            <h2>My Homelab</h2>
-            <p>Dell PowerEdge R330<br>Intel® Xeon® Processor E3-1240 v6, 32GB RAM</p>
-            <p>Dell PowerEdge R630<br>Intel® Xeon® Processor E5-2697 v4, 64GB RAM</p>
-            <img src="stackholder.png" alt="My Homelab">
-        </div>
-    </div>
+<h1>~* Aurora's Page *~</h1>
 
-    <div class="gallery-container">
-        <h2>Fursuit Pics (｡♥‿♥｡)</h2>
-        <div class="gallery">
-            <img src="furholder1.png" alt="Fursuit Photo 1">
-            <img src="furholder2.png" alt="Fursuit Photo 2">
-            <img src="furholder3.png" alt="Fursuit Photo 3">
-            <img src="furholder4.png" alt="Fursuit Photo 4">
-            <img src="furholder5.png" alt="Fursuit Photo 5">
-            <img src="furholder6.png" alt="Fursuit Photo 6">
-        </div>
-    </div>
+<marquee scrollamount="3">
+thanks for stopping by. please sign the guestbook before you leave :)
+</marquee>
+
+<hr width="75%">
+
+</center>
+
+<h2>about</h2>
+
+<p>
+hi, i'm aurora.
+</p>
+
+<p>
+i work in health care.
+</p>
+
+<p>
+i spend most of my free time on computers or messing with my servers.
+</p>
+
+<p>
+i also fursuit and go to cons when i can.
+</p>
+
+<p>
+i made this page with my own two paws.
+</p>
+
+<hr>
+
+<h2>my pc</h2>
+
+<p>
+this is my main computer.
+</p>
+
+<center>
+<img src="pc.jpg" alt="my pc">
+</center>
+
+<hr>
+
+<h2>servers</h2>
+
+<p>
+these are my servers.
+</p>
+
+<p>
+they run random stuff and i usually end up changing something on them every other day.
+</p>
+
+<center>
+<img src="server.jpg" alt="my servers">
+</center>
+
+<hr>
+
+<h2>fursuiting</h2>
+
+<p>
+this is my suit.
+</p>
+
+<p>
+i usually wear it at cons or when friends get together.
+</p>
+
+<center>
+<img src="fur.jpg" alt="my fursuit">
+</center>
+
+<hr>
+
+<h2>stuff i like</h2>
+
+<ul>
+<li>computers</li>
+<li>linux</li>
+<li>servers</li>
+<li>networking</li>
+<li>video games</li>
+<li>fursuiting</li>
+<li>cons</li>
+</ul>
+
+<hr>
+
+<h2>what's new</h2>
+
+<pre>
+07/06/26 - made this page (derogatory)
+07/06/26 - added pictures 
+07/06/26 - guestbook added (lol)
+</pre>
+
+<hr>
+
+<h2>guestbook</h2>
+
+<p>
+if you have a github account, you can leave a message.
+</p>
+
+<form action="https://github.com/farohfox/faroh.xyz/issues/new" method="get">
+<center>
+<input type="submit" value="sign guestbook">
+</center>
+</form>
+
+<hr>
+
+<h2>visitor counter</h2>
+
+<p>
+you are visitor:
+</p>
+
+<center>
+<div id="counter">loading...</div>
+</center>
+
+<script>
+fetch("https://api.countapi.xyz/hit/YOURNAME.github.io/aurora")
+.then(r => r.json())
+.then(d => {
+    document.getElementById("counter").innerHTML =
+        "#" + String(d.value).padStart(6, "0");
+});
+</script>
+
+<hr>
+
+<center>
+
+<img src="pc.jpg" alt="">
+<img src="server.jpg" alt="">
+<img src="fur.jpg" alt="">
+
+</center>
+
+<hr>
+
+<center>
+
+<p>
+this page was built with my own two paws.<br>
+hand written html, one tag at a time.<br>
+no website builders, just a text editor.
+</p>
+
+<p>
+best viewed on a crt monitor with<br>
+internet explorer 6, netscape navigator 7, or mozilla firefox.
+</p>
+
+<p>
+800x600 or 1024x768 recommended.
+</p>
+
+<p>
+this page should work on windows 98, 2000, xp, and probably anything newer.
+</p>
+
+<br>
+
+<small>
+last updated: july 2026<br>
+© 2026 aurora
+</small>
+
+</center>
+
 </body>
 </html>
