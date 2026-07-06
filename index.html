@@ -95,7 +95,7 @@ a:visited {
 
 <div class="wrap">
 
-<h1>~* Aurora's Page *~</h1>
+<h1>Aurora's Page</h1>
 
 <marquee scrollamount="3">
 thanks for stopping by. please sign the guestbook before you leave :)
@@ -109,7 +109,6 @@ thanks for stopping by. please sign the guestbook before you leave :)
 <p>i work in health care.</p>
 <p>i spend most of my free time on computers or messing with my servers.</p>
 <p>i also fursuit and go to cons when i can.</p>
-
 
 <hr>
 
@@ -157,10 +156,66 @@ thanks for stopping by. please sign the guestbook before you leave :)
 <p>if you have a github account, you can leave a message.</p>
 
 <div class="center">
-<a href="https://github.com/farohfox/faroh.xyz/issues/new?title=Guestbook%20Entry">
-sign guestbook
-</a>
+    <a href="https://github.com/farohfox/faroh.xyz/issues/new?title=Guestbook%20Entry"
+       target="_blank"
+       rel="noopener">
+        sign guestbook
+    </a>
 </div>
+
+<br>
+
+<div id="guestbookEntries">loading guestbook...</div>
+
+<script>
+fetch("https://api.github.com/repos/farohfox/faroh.xyz/issues")
+    .then(res => res.json())
+    .then(issues => {
+
+        const guestbook = document.getElementById("guestbookEntries");
+        guestbook.innerHTML = "";
+
+        if (!Array.isArray(issues) || issues.length === 0) {
+            guestbook.textContent = "no entries yet.";
+            return;
+        }
+
+        issues.forEach(issue => {
+            const entry = document.createElement("div");
+            entry.style.border = "1px solid black";
+            entry.style.background = "#fff";
+            entry.style.padding = "8px";
+            entry.style.margin = "10px 0";
+
+            const user = document.createElement("strong");
+            user.textContent = issue.user?.login || "unknown";
+
+            const date = document.createElement("small");
+            date.textContent = new Date(issue.created_at).toLocaleDateString();
+
+            const body = document.createElement("p");
+
+       
+            const lines = (issue.body || "").split("\n");
+            lines.forEach((line, i) => {
+                body.appendChild(document.createTextNode(line));
+                if (i < lines.length - 1) body.appendChild(document.createElement("br"));
+            });
+
+            entry.appendChild(user);
+            entry.appendChild(document.createElement("br"));
+            entry.appendChild(date);
+            entry.appendChild(body);
+
+            guestbook.appendChild(entry);
+        });
+
+    })
+    .catch(() => {
+        document.getElementById("guestbookEntries").textContent =
+            "couldn't load guestbook.";
+    });
+</script>
 
 <hr>
 
@@ -169,47 +224,17 @@ sign guestbook
 <p class="center">you are visitor:</p>
 
 <div class="center">
-<div class="counter" id="counter">#000000</div>
-</div>
-
-<script>
-fetch("https://api.countapi.xyz/hit/aurora-page/visits")
-  .then(r => r.json())
-  .then(d => {
-    document.getElementById("counter").textContent =
-      "#" + String(d.value).padStart(6, "0");
-  })
-  .catch(() => {
-    document.getElementById("counter").textContent = "#offline";
-  });
-</script>
-
-<hr>
-
-<div class="center">
-<img src="pc.jpg" alt="">
-<img src="server.jpg" alt="">
-<img src="fur.jpg" alt="">
+    <script type="text/javascript" src="https://counter.websiteout.com/js/30/0/0/1"></script>
 </div>
 
 <hr>
 
 <div class="footer">
-<p>
-this page was built with my own two paws.<br>
-just learned html sorry!
-</p>
-
-<p>
-best viewed on any monitor that still works.
-</p>
-
-<p>
-<small>last updated: july 2026<br>© 2026 aurora</small>
-</p>
+<p>this page was built with my own two paws.</p>
+<p>best viewed on anything!!!!</p>
+<p><small>last updated: july 2026<br>© 2026 aurora</small></p>
 </div>
 
 </div>
-
 </body>
 </html>
