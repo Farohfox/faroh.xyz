@@ -113,16 +113,19 @@ thanks for stopping by. please sign the guestbook before you leave :)
 <hr>
 
 <h2>my pc</h2>
+
 <img src="pc.jpg" alt="my pc">
 
 <hr>
 
 <h2>servers</h2>
+
 <img src="server.jpg" alt="my servers">
 
 <hr>
 
 <h2>fursuiting</h2>
+
 <img src="fur.jpeg" alt="my fursuit">
 
 <hr>
@@ -145,7 +148,7 @@ thanks for stopping by. please sign the guestbook before you leave :)
 
 <pre>
 07/06/26 - made this page (derogatory)
-07/06/26 - added pictures 
+07/06/26 - added pictures
 07/06/26 - guestbook added (lol)
 </pre>
 
@@ -154,11 +157,11 @@ thanks for stopping by. please sign the guestbook before you leave :)
 <h2>links</h2>
 
 <p class="center">
-    <a href="https://twitter.com/farohfox>[ twitter ]</a><br>
-    <a href="https://bsky.app/profile/faroh.xyz>[ bluesky ]</a><br>
-    <a href="https://t.me/farohxyz>[ telegram ]</a>
+<a href="https://twitter.com/farohfox">[ twitter ]</a><br>
+<a href="https://bsky.app/profile/faroh.xyz">[ bluesky ]</a><br>
+<a href="https://t.me/farohxyz">[ telegram ]</a>
 </p>
-      
+
 <hr>
 
 <h2>guestbook</h2>
@@ -166,11 +169,11 @@ thanks for stopping by. please sign the guestbook before you leave :)
 <p>if you have a github account, you can leave a message.</p>
 
 <div class="center">
-    <a href="https://github.com/farohfox/faroh.xyz/issues/new?title=Guestbook%20Entry"
-       target="_blank"
-       rel="noopener">
-        sign guestbook
-    </a>
+<a href="https://github.com/farohfox/faroh.xyz/issues/new?title=Guestbook%20Entry"
+target="_blank"
+rel="noopener">
+sign guestbook
+</a>
 </div>
 
 <br>
@@ -178,53 +181,62 @@ thanks for stopping by. please sign the guestbook before you leave :)
 <div id="guestbookEntries">loading guestbook...</div>
 
 <script>
-fetch("https://api.github.com/repos/farohfox/faroh.xyz/issues")
-    .then(res => res.json())
-    .then(issues => {
+fetch("https://api.github.com/repos/farohfox/faroh.xyz/issues?labels=guestbook")
+.then(res=>res.json())
+.then(issues=>{
 
-        const guestbook = document.getElementById("guestbookEntries");
-        guestbook.innerHTML = "";
+let guestbook=document.getElementById("guestbookEntries")
+guestbook.innerHTML=""
 
-        if (!Array.isArray(issues) || issues.length === 0) {
-            guestbook.textContent = "no entries yet.";
-            return;
-        }
+if(!Array.isArray(issues)){
+guestbook.textContent="couldn't load guestbook."
+return
+}
 
-        issues.forEach(issue => {
-            const entry = document.createElement("div");
-            entry.style.border = "1px solid black";
-            entry.style.background = "#fff";
-            entry.style.padding = "8px";
-            entry.style.margin = "10px 0";
+let found=false
 
-            const user = document.createElement("strong");
-            user.textContent = issue.user?.login || "unknown";
+issues.forEach(issue=>{
 
-            const date = document.createElement("small");
-            date.textContent = new Date(issue.created_at).toLocaleDateString();
+if(issue.pull_request)return
 
-            const body = document.createElement("p");
+found=true
 
-       
-            const lines = (issue.body || "").split("\n");
-            lines.forEach((line, i) => {
-                body.appendChild(document.createTextNode(line));
-                if (i < lines.length - 1) body.appendChild(document.createElement("br"));
-            });
+let entry=document.createElement("div")
+entry.style.border="1px solid black"
+entry.style.background="#fff"
+entry.style.padding="8px"
+entry.style.margin="10px 0"
 
-            entry.appendChild(user);
-            entry.appendChild(document.createElement("br"));
-            entry.appendChild(date);
-            entry.appendChild(body);
+let user=document.createElement("strong")
+user.textContent=issue.user?issue.user.login:"unknown"
 
-            guestbook.appendChild(entry);
-        });
+let date=document.createElement("small")
+date.textContent=new Date(issue.created_at).toLocaleDateString()
 
-    })
-    .catch(() => {
-        document.getElementById("guestbookEntries").textContent =
-            "couldn't load guestbook.";
-    });
+let body=document.createElement("p")
+
+let lines=(issue.body||"").split("\n")
+
+lines.forEach((line,i)=>{
+body.appendChild(document.createTextNode(line))
+if(i<lines.length-1)body.appendChild(document.createElement("br"))
+})
+
+entry.appendChild(user)
+entry.appendChild(document.createElement("br"))
+entry.appendChild(date)
+entry.appendChild(body)
+
+guestbook.appendChild(entry)
+
+})
+
+if(!found)guestbook.textContent="no entries yet."
+
+})
+.catch(()=>{
+document.getElementById("guestbookEntries").textContent="couldn't load guestbook."
+})
 </script>
 
 <hr>
@@ -234,7 +246,7 @@ fetch("https://api.github.com/repos/farohfox/faroh.xyz/issues")
 <p class="center">you are visitor:</p>
 
 <div class="center">
-    <script type="text/javascript" src="https://counter.websiteout.com/js/30/0/0/1"></script>
+<script type="text/javascript" src="https://counter.websiteout.com/js/30/0/0/1"></script>
 </div>
 
 <hr>
@@ -246,5 +258,6 @@ fetch("https://api.github.com/repos/farohfox/faroh.xyz/issues")
 </div>
 
 </div>
+
 </body>
 </html>
