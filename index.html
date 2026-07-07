@@ -147,8 +147,9 @@ thanks for stopping by. please sign the guestbook before you leave :)
 <h2>what's new</h2>
 
 <pre>
+07/07/26 - added links (find me)
 07/06/26 - made this page (derogatory)
-07/06/26 - added pictures
+07/06/26 - added pictures (cute?)
 07/06/26 - guestbook added (lol)
 </pre>
 
@@ -258,6 +259,34 @@ document.getElementById("guestbookEntries").textContent="couldn't load guestbook
 </div>
 
 </div>
+
+<audio id="dialup" preload="auto">
+  <source src="dialup.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("load", () => {
+  const dialup = document.getElementById("dialup");
+
+  function play() {
+    dialup.play().catch(() => {
+      const start = () => {
+        dialup.play();
+
+        document.removeEventListener("click", start);
+        document.removeEventListener("keydown", start);
+        document.removeEventListener("touchstart", start);
+      };
+
+      document.addEventListener("click", start);
+      document.addEventListener("keydown", start);
+      document.addEventListener("touchstart", start);
+    });
+  }
+
+  play();
+});
+</script>
 
 </body>
 </html>
