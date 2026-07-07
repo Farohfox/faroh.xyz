@@ -170,7 +170,7 @@ thanks for stopping by. please sign the guestbook before you leave :)
 <p>if you have a github account, you can leave a message.</p>
 
 <div class="center">
-<a href="https://github.com/farohfox/faroh.xyz/issues/new?title=Guestbook%20Entry"
+<a href="https://github.com/farohfox/faroh.xyz/issues/new?title=Guestbook%20Entry&labels=guestbook"
 target="_blank"
 rel="noopener">
 sign guestbook
@@ -259,34 +259,6 @@ document.getElementById("guestbookEntries").textContent="couldn't load guestbook
 </div>
 
 </div>
-
-<audio id="dialup" preload="auto">
-  <source src="dialup.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-window.addEventListener("load", () => {
-  const dialup = document.getElementById("dialup");
-
-  function play() {
-    dialup.play().catch(() => {
-      const start = () => {
-        dialup.play();
-
-        document.removeEventListener("click", start);
-        document.removeEventListener("keydown", start);
-        document.removeEventListener("touchstart", start);
-      };
-
-      document.addEventListener("click", start);
-      document.addEventListener("keydown", start);
-      document.addEventListener("touchstart", start);
-    });
-  }
-
-  play();
-});
-</script>
 
 </body>
 </html>
